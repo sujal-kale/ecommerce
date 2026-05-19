@@ -9,7 +9,8 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="E-Commerce API", version="1.0.0")
 
 app.add_middleware(
-    allow_origins=[*],
+    CORSMiddleware,
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
